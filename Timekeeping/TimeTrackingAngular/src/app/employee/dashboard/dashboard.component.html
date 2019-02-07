@@ -1,0 +1,85 @@
+ <div fxLayoutAlign="space-between">
+    <h3 class="m-0">Welcome back, John!</h3>
+    <h3 class="m-0">{{ today | date:'MMMM d, y | EEEE' }}</h3>
+  </div>
+  <mat-divider class="m-t-15 m-b-15"></mat-divider>
+  
+  
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+    <div fxFlex.gt-sm="20" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-icon class="employee-icon">
+        account_circle
+      </mat-icon>
+    </div>
+  
+    <div fxFlex.gt-sm="10" fxFlex.gt-xs="100" fxFlex="100">
+      <label fxLayoutAlign="end" class="m-b-5">Name: </label>
+  
+      <label fxLayoutAlign="end" class="m-b-5">Project: </label>
+  
+      <label fxLayoutAlign="end" class="m-b-5">Approver: </label>
+  
+      <label fxLayoutAlign="end" class="m-b-5">Shift: </label> 
+    </div>
+  
+    <div fxFlex.gt-sm="40" fxFlex.gt-xs="100" fxFlex="100">
+  
+  
+      <label fxLayoutAlign="start" class="m-r-10 m-b-5"> John Ramm Doe</label>
+  
+      <label fxLayoutAlign="start" class="m-r-10 m-b-5"> Project Name</label>
+  
+      <label fxLayoutAlign="start" class="m-r-10 m-b-5"> Approver Name</label>
+  
+      <label fxLayoutAlign="start" class="m-r-10 m-b-5"> Morning</label>
+    </div>
+  </div> 
+  
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+    <div fxFlex.gt-sm="45" fxFlex.gt-xs="100" fxFlex="100">
+      <h3 class="m-r-15">My Leave Balances:</h3>
+      <mat-divider></mat-divider>
+  
+      <div class="m-0" fxLayoutGap="20px">
+        <div fxFlex.gt-sm="40">
+            <label class="m-0" fxLayoutAlign="end">Vacation Leave:</label>
+            <label class="m-0" fxLayoutAlign="end">Sick Leave:</label>
+            <label class="m-0" fxLayoutAlign="end">Emergency Leave:</label>
+            <label class="m-0" fxLayoutAlign="end">Updated Every:</label>
+            <label class="m-0" fxLayoutAlign="end">Increments of:</label>
+        </div>
+  
+        <div fxFlex.gt-sm="40" fxFlex.gt-xs="30" fxFlex="30">
+            <label class="m-0" fxLayoutAlign="start"> 15</label>
+            <label class="m-0" fxLayoutAlign="start"> 15</label>
+            <label class="m-0" fxLayoutAlign="start"> 10</label>
+            <label class="m-0" fxLayoutAlign="start"> 30th of the Month</label>
+            <label class="m-0" fxLayoutAlign="start"> 1.25</label>
+        </div>
+        </div>
+      </div>
+  
+      <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+          <h3 class="m-r-15">Today's Log:</h3>
+          <mat-divider></mat-divider>
+      
+          <div class="m-0" fxLayoutGap="20px">
+            <div fxFlex.gt-sm="40">
+                <label class="m-0" fxLayoutAlign="end">Clocked-In:</label>
+                <label class="m-0" fxLayoutAlign="end">Remaining Hours:</label>
+                <label class="m-0" fxLayoutAlign="end">Late By:</label>
+                <label class="m-0" fxLayoutAlign="end">Early By:</label>
+                <label class="m-0" fxLayoutAlign="end">Excess of:</label>
+            </div>
+      
+            <div fxFlex.gt-sm="40" fxFlex.gt-xs="30" fxFlex="30">
+                <label class="m-0" fxLayoutAlign="start"> 9:08am</label>
+                <label class="m-0" fxLayoutAlign="start"> 3hrs 24mins</label>
+                <label class="m-0" fxLayoutAlign="start"> N/A</label>
+                <label class="m-0" fxLayoutAlign="start"> 21mins</label>
+                <label class="m-0" fxLayoutAlign="start"> </label>
+            </div>          
+                 </div>
+              </div>
+          </div>
+        

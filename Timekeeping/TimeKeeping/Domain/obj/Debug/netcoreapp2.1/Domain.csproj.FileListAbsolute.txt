@@ -1,0 +1,12 @@
+C:\Training\TimeKeeping\Domain\bin\Debug\netcoreapp2.1\Domain.deps.json
+C:\Training\TimeKeeping\Domain\bin\Debug\netcoreapp2.1\Domain.dll
+C:\Training\TimeKeeping\Domain\bin\Debug\netcoreapp2.1\Domain.pdb
+C:\Training\TimeKeeping\Domain\bin\Debug\netcoreapp2.1\Domain.Models.dll
+C:\Training\TimeKeeping\Domain\bin\Debug\netcoreapp2.1\Domain.Models.pdb
+C:\Training\TimeKeeping\Domain\obj\Debug\netcoreapp2.1\Domain.csprojAssemblyReference.cache
+C:\Training\TimeKeeping\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CoreCompileInputs.cache
+C:\Training\TimeKeeping\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfoInputs.cache
+C:\Training\TimeKeeping\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
+C:\Training\TimeKeeping\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CopyComplete
+C:\Training\TimeKeeping\Domain\obj\Debug\netcoreapp2.1\Domain.dll
+C:\Training\TimeKeeping\Domain\obj\Debug\netcoreapp2.1\Domain.pdb

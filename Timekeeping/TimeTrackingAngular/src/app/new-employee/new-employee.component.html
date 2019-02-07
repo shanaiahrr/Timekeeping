@@ -1,0 +1,186 @@
+<div fxLayoutAlign="space-between">
+  <h3 class="m-0">Add New Employee</h3>
+  <h3 class="m-0">{{ today | date:'MMMM d, y | EEEE' }}</h3>
+</div>
+<mat-divider class="m-t-15 m-b-15"></mat-divider>
+
+<h4 class="m-0">Personal Information:</h4>
+
+  <form [formGroup]="employeeFormGroup">
+    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+      <div fxFlex.gt-md="30" fxFlex="30">   
+      <mat-form-field>
+        <input type="text" formControlName="lastName" placeholder="Last Name" [(ngModel)]="selectEmployee.lastName" matInput>
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      </div>
+      <div fxFlex.gt-md="30" fxFlex="30"> 
+          <mat-form-field>
+            <input type="text" formControlName="firstName" placeholder="First Name" [(ngModel)]="selectEmployee.firstName" matInput>
+            <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+      <div fxFlex.gt-md="30" fxFlex="30"> 
+      <mat-form-field>
+        <input type="text" formControlName="middleName" placeholder="Middle Name" [(ngModel)]="selectEmployee.middleName" matInput>
+      </mat-form-field>
+      </div>
+     
+      <div fxFlex="66" fxLayoutAlign="space-between">
+        <div fxFlex.gt-md="50" fxFlex="50" style="display:flex;margin-top:15px">
+            <label class="m-r-15" fxFlexAlign="auto" >Select Gender:</label>    
+            <mat-radio-group class="gender" formControlName="gender"[(ngModel)]="selectEmployee.gender">
+              <div fxFlex.gt-md="30" fxFlex="30" fxLayout="row">
+              <mat-radio-button class="gender m-r-15" *ngFor="let gender of genders" [value]="gender" placeholder="Gender">
+                {{gender}}
+              </mat-radio-button>
+      
+            </div>
+            </mat-radio-group>
+      
+        </div>
+        <div fxFlex.gt-md="47" fxFlex="47" style="padding-right:8px;">
+            <mat-form-field>
+                <input matInput [matDatepicker]="birthdate" [(ngModel)]="selectEmployee.birthdate" formControlName="birthdate" placeholder="Birthday:" readonly [max]="maxDate">
+                <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+                <mat-datepicker-toggle matSuffix [for]="birthdate"></mat-datepicker-toggle>
+                <mat-datepicker #birthdate disabled="false"></mat-datepicker>
+              </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+<mat-divider class="m-t-15 m-b-15"></mat-divider>
+
+<h4 class="m-0">Company Information</h4>
+
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+        <mat-form-field>
+        <input matInput [matDatepicker]="hiredDate" formControlName="hiredDate" [(ngModel)]="selectEmployee.hiredDate" placeholder="Date Hired:" readonly [max]="maxDate">
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+        <mat-datepicker-toggle matSuffix [for]="hiredDate"></mat-datepicker-toggle>
+        <mat-datepicker #hiredDate disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+      <mat-form-field>
+        <input type="number" min="0" oninput="validity.valid || (value='');" formControlName="employeeID" matInput placeholder="Employee ID:" [(ngModel)]="selectEmployee.EmployeeID">
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+      <mat-form-field>
+        <mat-select formControlName="employeeStatus" placeholder="Employee Status" [(ngModel)]="selectEmployee.employeeStatus">
+          <mat-option class="employeeStatus" *ngFor="let employeeStatus of employeeStatus" [value]="employeeStatus" placeholder="Employee Status">{{employeeStatus}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      </div>
+      </div>
+
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+    <div fxFlex.gt-md="30" fxFlex="30">
+      <mat-form-field>
+        <input type="text" formControlName="position" matInput placeholder="Position:" [(ngModel)]="selectEmployee.position">
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+  
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+      <mat-form-field>
+        <mat-select formControlName="department" placeholder="Department" [(ngModel)]="selectEmployee.department">
+          <mat-option class="department" *ngFor="let department of department" [value]="department" placeholder="Department">{{department}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+      <mat-form-field>
+        <input type="text" formControlName="project" matInput placeholder="Project:" [(ngModel)]="selectEmployee.project">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+        <mat-form-field>
+            <mat-select formControlName="activityType" placeholder="Cost Center" [(ngModel)]="selectEmployee.activityType">
+              <mat-option class="activityType" *ngFor="let activityType of activityType" [value]="activityType" placeholder="Activity Type">{{activityType}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+    </div>
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+        <mat-form-field>
+        <input matInput [matDatepicker]="separatedDate" formControlName="separatedDate" placeholder="Separated Date" [(ngModel)]="selectEmployee.separatedDate" readonly [max]="maxDate">
+        <mat-datepicker-toggle matSuffix [for]="separatedDate"></mat-datepicker-toggle>
+        <mat-datepicker #separatedDate disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+        <mat-form-field>
+            <mat-select formControlName="shift" placeholder="Shift Type" [(ngModel)]="selectEmployee.shift">
+              <mat-option class="shift" *ngFor="let shift of shifts" [value]="shift" placeholder="Shift Type">{{shift}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+    </div>
+  </div>
+
+<mat-divider class="m-t-15 m-b-15"></mat-divider>
+
+<h4 class="m-0">Government Numbers:</h4>
+
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+   
+    <div fxFlex.gt-md="30" fxFlex="30">
+      <mat-form-field>
+        <input type="number" min="0" oninput="validity.valid || (value='');" formControlName="sssno" [(ngModel)]="selectEmployee.sssno" matInput placeholder="SSS No:">
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+      <mat-form-field>
+        <input type="number" min="0" oninput="validity.valid || (value='');" formControlName="phicno" [(ngModel)]="selectEmployee.phicno" matInput placeholder="PHIC No:">
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex.gt-md="30" fxFlex="30">
+      <mat-form-field>
+        <input type="number" min="0" oninput="validity.valid || (value='');" formControlName="tinno" [(ngModel)]="selectEmployee.tinno" matInput placeholder="TIN No:">
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutWrap="wrap">
+   
+    <div fxFlex.gt-md="30" fxFlex="30">
+      <mat-form-field>
+        <input type="number" min="0" oninput="validity.valid || (value='');" formControlName="hdmfno" [(ngModel)]="selectEmployee.hdmfno" matInput placeholder="HDMF No:">
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+  </div> 
+</form>
+
+
+<mat-divider class="m-t-15 m-b-15"></mat-divider>
+  
+  <div fxLayoutAlign="space-between">
+    <a mat-raised-button (click)="cancelEmployee()">Cancel</a>
+    <a mat-raised-button (click)="saveDialog()" *ngIf="!employeeFormGroup.valid==false" [disabled]="!employeeFormGroup.valid">Save</a>
+    <!-- <button mat-raised-button (click)="saveEmployee()">Save</button> -->
+  </div>

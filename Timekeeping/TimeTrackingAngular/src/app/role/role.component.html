@@ -1,0 +1,83 @@
+<div fxLayoutAlign="space-between">
+  <h3 class="m-0">Add New Role</h3>
+  <h3 class="m-0">{{ today | date:'MMMM d, y | EEEE' }}</h3>
+</div>
+<mat-divider class="m-t-15 m-b-15"></mat-divider>
+<!-- 
+    <form class="basic-form">
+      <div fxLayout="row" fxLayoutWrap="wrap">
+
+        <div fxFlex.gt-md="33" fxFlex="33">
+            
+        </div>
+      </div>
+    </form> -->
+
+<form [formGroup]="roleForm">
+    <mat-form-field>
+        <input type="text" formControlName="roleName" placeholder="Role Title" [(ngModel)]="selectRole.roleName" matInput>
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    <h4>Rights</h4>
+
+    <div class="m-r-15">
+      <section class="example-section">
+        <mat-checkbox class="m-r-10" >Full Access </mat-checkbox>
+      </section>
+      <section class="example-section">
+        <mat-checkbox color="warn" class="m-r-10"  [(disabled)]="checked">Access Time Keeping Management Page and Controls </mat-checkbox>
+      </section>
+      <section class="example-section">
+        <mat-checkbox color="primary" class="m-r-10"  [(disabled)]="checked">Access Approval Management Page and Controls </mat-checkbox>
+      </section>
+
+    </div>
+
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+    <h4>Admin Rights:</h4>
+    <div class="m-r-15">
+      <section class="example-section">
+          <ng-container formArrayName="adminRights" *ngFor="let role of roleForm.controls.adminRights.controls; let x = index">
+              <mat-checkbox [formControlName]="x">
+                {{adminRights[x].nameofRight}}
+              </mat-checkbox>
+          </ng-container>
+      </section>
+
+    </div>
+  </div>
+
+  <div fxFlex.gt-sm="30" fxFlex.gt-xs="100" fxFlex="100">
+        <h4>Time Keeping Rights:</h4>
+        <div class="m-r-15">
+
+          <section class="example-section">
+              <ng-container formArrayName="timekeepingRights" *ngFor="let role of roleForm.controls.timekeepingRights.controls; let y = index">
+                  <mat-checkbox [formControlName]="y">
+                    {{timekeepingRights[y].nameofRight}}
+                  </mat-checkbox>
+              </ng-container>
+          </section>
+        </div>    
+  </div>
+
+  <div fxFlex.gt-sm="45" fxFlex.gt-xs="100" fxFlex="100">
+    <h4>Attendance Approver Rights:</h4>
+    <div class="m-r-15">
+      <section class="example-section">
+          <ng-container formArrayName="approverRights" *ngFor="let role of roleForm.controls.approverRights.controls; let i = index">
+              <mat-checkbox [formControlName]="i">
+                {{approverRights[i].nameofRight}}
+              </mat-checkbox>
+          </ng-container>
+      </section>
+    </div>
+  </div>
+  <!-- <button mat-button type="submit">Submit</button> -->
+</div>
+</form>
+<mat-divider class="m-t-15 m-b-15"></mat-divider>
+  
+  <a mat-raised-button [routerLink]="['/dashboards/manage-roles']">Cancel</a>
+  <a mat-raised-button (click)="saveRole()">Save Changes</a>

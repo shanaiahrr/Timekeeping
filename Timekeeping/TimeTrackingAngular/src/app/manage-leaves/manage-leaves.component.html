@@ -1,0 +1,69 @@
+<div fxLayoutAlign="space-between">
+    <h3 class="m-0">Manage Leaves</h3>
+    <h3 class="m-0">{{ today | date:'h:mm:ss a | MMMM d, y | EEEE' }}</h3>
+  </div>
+  <mat-divider class="m-t-15 m-b-15"></mat-divider>
+  
+  
+  <div fxLayoutAlign="space-between">
+    <h3 class="m-0">Leave Types:</h3>
+    <div>
+      <button class="m-0" mat-raised-button (click)="addDialog()">Add New Leaves</button>
+    </div>
+  
+  </div>
+  
+  <div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card>
+        <mat-card-content>
+          <div class="table-rasponsive">
+            <mat-table [dataSource]="dataSource" matSort>
+  
+              <!-- Leave Type Column -->
+              <ng-container matColumnDef="leaveType">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Leave Type </mat-header-cell>
+                <mat-cell *matCellDef="let ManageLeaves"> {{ManageLeaves.leaveType}} </mat-cell>
+              </ng-container>
+  
+              <!-- Updated Every Column -->
+              <ng-container matColumnDef="updatedEvery">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Updated Every </mat-header-cell>
+                <mat-cell *matCellDef="let ManageLeaves"> {{ManageLeaves.updatedEvery}} </mat-cell>
+              </ng-container>
+  
+              <!-- Gain /month Column -->
+              <ng-container matColumnDef="gain">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Gain /month </mat-header-cell>
+                <mat-cell *matCellDef="let ManageLeaves"> {{ManageLeaves.gain}} </mat-cell>
+              </ng-container>
+  
+              <!-- Eligible For Column -->
+              <ng-container matColumnDef="eligible">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Eligible For </mat-header-cell>
+                <mat-cell *matCellDef="let ManageLeaves"> {{ManageLeaves.eligible}} </mat-cell>
+              </ng-container>
+  
+              <!-- Action Column -->
+              <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Action </mat-header-cell>
+                <mat-cell *matCellDef="let ManageLeaves">
+                  <button class="m-0" mat-raised-button (click)="editDialog(ManageLeaves.manageLeavesID)">Details</button>
+                </mat-cell>
+              </ng-container>
+  
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let ManageLeaves; columns: displayedColumns;">
+              </mat-row>
+            </mat-table>
+  
+            <!-- <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator> -->
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  
+  <!-- <mat-divider class="m-t-15 m-b-15"></mat-divider> -->
+  
+  <a mat-raised-button [routerLink]="['/dashboards/time-keeping']">Back</a>

@@ -1,0 +1,141 @@
+<div fxLayoutAlign="space-between">
+  <h3 class="m-0">Welcome back, Admin!</h3>
+  <h3 class="m-0">{{ today | date:'MMMM d, y | EEEE' }}</h3>
+</div>
+<mat-divider class="m-t-15"></mat-divider>
+
+
+<h3>What do you want to do?</h3>
+
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <!-- column -->
+  <div fxFlex.gt-sm="33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card style="border-radius: 20px">
+      <mat-card-content class="m-0">
+        <!-- Row -->
+        <div class="d-flex no-block m-0">
+          <!-- column -->
+          <div class="m-r-15 no-shrink">
+            <button mat-icon-button [routerLink]="['/dashboards/manage-leaves']">
+              <mat-icon>airplanemode_active</mat-icon>
+            </button>
+          </div>
+          <!-- column -->
+          <div>
+            <h4 class="m-t-10 m-b-0">Manage Leaves</h4>
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex.gt-sm="33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card style="border-radius: 20px">
+      <mat-card-content>
+        <!-- Row -->
+        <div class="d-flex no-block">
+          <!-- column -->
+          <div class="m-r-15 no-shrink">
+            <button mat-icon-button [routerLink]="['/dashboards/manage-work-shifts']">
+              <mat-icon>access_time</mat-icon>
+            </button>
+          </div>
+          <!-- column -->
+          <div fxLayoutAlign="center">
+            <h4 class="m-t-10 m-b-0">Manage Work Shifts</h4>
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex.gt-sm="33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card style="border-radius: 20px">
+      <mat-card-content>
+        <!-- Row -->
+        <div class="d-flex no-block">
+          <!-- column -->
+          <div class="m-r-15 no-shrink">
+            <button mat-icon-button>
+              <mat-icon>people</mat-icon>
+            </button>
+          </div>
+          <!-- column -->
+          <div>
+            <h4 class="m-t-10 m-b-0">Set Approvers</h4>
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <!-- column -->
+  <div fxFlex.gt-sm="33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card style="border-radius: 20px">
+      <mat-card-content>
+        <!-- Row -->
+        <div class="d-flex no-block">
+          <!-- column -->
+          <div class="m-r-15 no-shrink">
+            <button mat-icon-button>
+              <mat-icon>file_download</mat-icon>
+            </button>
+          </div>
+          <!-- column -->
+          <div>
+            <h4 class="m-t-10 m-b-0">Import Logs</h4>
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex.gt-sm="33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card style="border-radius: 20px">
+      <mat-card-content>
+        <!-- Row -->
+        <div class="d-flex no-block">
+          <!-- column -->
+          <div class="m-r-15 no-shrink">
+            <button mat-icon-button>
+              <mat-icon>date_range</mat-icon>
+              <!-- <mat-icon class="text-info">date_range</mat-icon> -->
+            </button>
+          </div>
+          <!-- column -->
+          <div>
+            <h4 class="m-t-10 m-b-0">Holidays & Cutoffs</h4>
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex.gt-sm="33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card style="border-radius: 20px">
+      <mat-card-content>
+        <!-- Row -->
+        <div class="d-flex no-block">
+          <!-- column -->
+          <div class="m-r-15 no-shrink">
+            <button mat-icon-button>
+              <mat-icon>description</mat-icon>
+            </button>
+          </div>
+          <!-- column -->
+          <div>
+            <h4 class="m-t-10 m-b-0">Timelogs & Reports</h4>
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

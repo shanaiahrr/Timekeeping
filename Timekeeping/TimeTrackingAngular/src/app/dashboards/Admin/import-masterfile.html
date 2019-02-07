@@ -1,0 +1,17 @@
+<h1 class="m-0" mat-dialog-title fxLayoutAlign="center">Import Employee Master File</h1>
+<div mat-dialog-content>
+    <p fxLayoutAlign="center">Select a File to Import:</p>
+    <div fxLayout="row" fxLayoutWrap="wrap">
+        <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+
+            <label class="custom-file">
+                <input type="file" class="custom-file-input">
+            </label>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions fxLayoutAlign="center">
+
+    <button mat-raised-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    <button mat-raised-button (click)="onNoClick()" tabindex="2">Import</button>
+</div>

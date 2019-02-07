@@ -1,0 +1,109 @@
+<div fxLayoutAlign="space-between">
+        <h3 class="m-0">Welcome back, Admin!</h3>
+        <h3 class="m-0">{{ today | date:'MMMM d, y | EEEE' }}</h3>
+    </div>
+    <mat-divider class="m-t-15"></mat-divider>
+    
+    <div fxLayout="row" fxLayoutWrap="wrap">
+        <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <mat-card>
+                <mat-card-content>
+                    <div class="m-r-10 no-shrink" fxLayoutAlign="center">
+                        <a mat-fab mat-card-icon class="shadow-none bg-inverse bg-success" [routerLink]="['/dashboards/new-employee']">
+                        <mat-icon>person_add</mat-icon>
+                        </a>
+                        </div>
+                    <h4 class="m-0" fxLayoutAlign="center">New Employee</h4>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <mat-card>
+            <mat-card-content>
+            <div class="m-r-10 no-shrink" fxLayoutAlign="center">
+            <a mat-fab mat-card-icon class="shadow-none bg-inverse bg-success" (click)="openDialog()">
+            <mat-icon>account_box</mat-icon>
+            </a>
+            </div>
+            <h4 class="m-0" fxLayoutAlign="center">Import Master File</h4>
+            </mat-card-content>
+            </mat-card>
+            </div>
+        <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <mat-card>
+                <mat-card-content>
+                    <div class="m-r-10 no-shrink" fxLayoutAlign="center">
+                        <button mat-fab mat-card-icon class="shadow-none bg-inverse bg-success" [routerLink]="['/dashboards/manage-roles']">
+                            <mat-icon>people</mat-icon>
+                        </button>
+                    </div>
+                    <h4 class="m-0" fxLayoutAlign="center">Manage Roles</h4>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <mat-card>
+                <mat-card-content>
+                    <div class="m-r-10 no-shrink" fxLayoutAlign="center">
+                        <a mat-fab color="warn" mat-card-icon class="shadow-none bg-inverse bg-success" [routerLink]="['/dashboards/assign-roles']">
+                            <mat-icon>check_box</mat-icon>
+                        </a>
+                    </div>
+                    <h4 class="m-0" fxLayoutAlign="center">Assign Roles</h4>
+                    
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>  
+    
+    <mat-divider class="m-t-15"></mat-divider>
+
+    <div fxLayout="row" fxLayoutWrap="wrap">
+        <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+          <mat-card>
+            <mat-card-content>
+              <mat-card-title>ADVANCED SEARCH</mat-card-title>
+              <div class="bg-light p-10 p-r-20 p-l-20">
+                <mat-form-field>
+                  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Employee">
+                </mat-form-field>
+              </div>
+      
+              <div class="table-responsive">
+                <mat-table #table [dataSource]="dataSource">
+                 
+                  <ng-container matColumnDef="employeeID">
+                    <mat-header-cell *matHeaderCellDef> Employee ID </mat-header-cell>
+                    <mat-cell *matCellDef="let Employee"  [routerLink]="['/dashboards','admin', Employee.employeeID]"> {{Employee.employeeID}} </mat-cell>
+                  </ng-container>
+      
+                
+                  <ng-container matColumnDef="firstName">
+                    <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+                    <mat-cell *matCellDef="let Employee" [routerLink]="['/dashboards','admin', Employee.employeeID]"> {{Employee.firstName}} </mat-cell>
+                  </ng-container>
+      
+                  
+                  <ng-container matColumnDef="lastName">
+                    <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+                    <mat-cell *matCellDef="let Employee" [routerLink]="['/dashboards','admin', Employee.employeeID]"> {{Employee.lastName}} </mat-cell>
+                  </ng-container>
+      
+                  
+                  <ng-container matColumnDef="roleID">
+                    <mat-header-cell *matHeaderCellDef> Role </mat-header-cell>
+                    <mat-cell *matCellDef="let Employee"> {{Employee.roleName}} </mat-cell>
+                  </ng-container>
+      
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <!-- this.employeeService.editEmployee(this.selectEmployee).then();
+                    this.employeeService.editEmployee(this.selectEmployee).then(); -->
+                  <mat-row class="pointer" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+                </mat-paginator>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>

@@ -1,0 +1,148 @@
+<div fxLayoutAlign="space-between">
+  <h3 class="m-0">Apply for Leave, Offset, Remote Work</h3>
+  <h3 class="m-0">{{ today | date:'MMMM d, y | EEEE' }}</h3>
+</div>
+<mat-divider class="m-t-15"></mat-divider>
+
+<form class="basic-form">
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+    <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+      <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+        <div fxFlex.gt-sm="45" fxFlex.gt-xs="45" fxFlex="45" fxLayoutAlign="end">
+          <h4 class="m-r-0">I would like to file for a: </h4>
+        </div>
+
+        <div fxFlex.gt-sm="40" fxFlex.gt-xs="40" fxFlex="40">
+          <mat-form-field>
+            <mat-select placeholder="Leave">
+              <mat-option value="vacationLeave">Vacation Leave</mat-option>
+              <mat-option value="sickLeave">Sick Leave</mat-option>
+              <mat-option value="emergencyLeave">Emergency Leave</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+        <div fxFlex.gt-sm="45" fxFlex.gt-xs="45" fxFlex="45" fxLayoutAlign="end">
+          <h4>Which will start on: </h4>
+        </div>
+        <div fxFlex.gt-sm="40" fxFlex.gt-xs="40" fxFlex="40">
+          <mat-form-field>
+            <input matInput [matDatepicker]="start" placeholder="Start">
+            <mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+            <mat-datepicker #start></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+        <div fxFlex.gt-sm="45" fxFlex.gt-xs="45" fxFlex="45" fxLayoutAlign="end">
+          <h4>and ends on: </h4>
+        </div>
+
+        <div fxFlex.gt-sm="40" fxFlex.gt-xs="40" fxFlex="40">
+          <mat-form-field>
+            <input matInput [matDatepicker]="end" placeholder="End">
+            <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+            <mat-datepicker #end></mat-datepicker>
+          </mat-form-field>
+
+        </div>
+
+
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+        <div fxFlex.gt-sm="45" fxFlex.gt-xs="45" fxFlex="45" fxLayoutAlign="end">
+          <h4 class="m-r-0">thats a total of: </h4>
+        </div>
+
+        <div fxFlex.gt-sm="40" fxFlex.gt-xs="40" fxFlex="40">
+          <mat-form-field>
+            <input matInput type="number">
+            <span matSuffix>days</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+
+    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+
+    </div>
+
+
+    <div fxFlex.gt-sm="45" fxFlex.gt-xs="100" fxFlex="100" fxLayoutGap="20px">
+      <mat-card style="border-radius:20px">
+        <mat-card-content>
+          <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+            <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="50" fxLayoutAlign="end">
+              <h4 class="m-0">Vacation Leave: </h4>
+            </div>
+            <div fxFlex.gt-sm="30" fxFlex.gt-xs="30" fxFlex="30">
+              <h4 class="m-0"> 15 </h4>
+            </div>
+
+          </div>
+
+          <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+            <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="50" fxLayoutAlign="end">
+              <h4 class="m-0">Sick Leave: </h4>
+            </div>
+            <div fxFlex.gt-sm="30" fxFlex.gt-xs="30" fxFlex="30">
+              <h4 class="m-0"> 15 </h4>
+            </div>
+
+          </div>
+
+          <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+            <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="50" fxLayoutAlign="end">
+              <h4 class="m-0">Emergency Leave: </h4>
+            </div>
+            <div fxFlex.gt-sm="30" fxFlex.gt-xs="30" fxFlex="30">
+              <h4 class="m-0"> 10 </h4>
+            </div>
+
+          </div>
+
+          <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+            <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="50" fxLayoutAlign="end">
+              <h4 class="m-0">Approver: </h4>
+            </div>
+            <div fxFlex.gt-sm="40" fxFlex.gt-xs="40" fxFlex="40">
+              <h4 class="m-0"> Approver Name </h4>
+            </div>
+
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+
+
+    </div>
+
+  </div>
+
+
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+    <div fxFlex.gt-sm="20" fxFlex.gt-xs="20" fxFlex="20" fxLayoutAlign="end">
+      <h4 class="m-r-0">because: </h4>
+    </div>
+
+    <div fxFlex.gt-sm="70" fxFlex.gt-xs="20" fxFlex="20">
+      <mat-form-field>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+</form>
+
+
+<mat-divider class="m-t-15"></mat-divider>
+
+<div fxLayoutAlign="end">
+  <a mat-raised-button [routerLink]="['/dashboards/admin']">Submit</a>
+</div>
