@@ -1,0 +1,73 @@
+<h1 mat-dialog-title fxLayoutAlign="center">Leave Type</h1>
+
+
+
+<form [formGroup]="manageLeavesForm">
+  <div fxLayout="row" fxLayoutWrap="wrap">
+    <mat-form-field>
+      <input matInput placeholder="Leave Name:" formControlName="leaveType" [(ngModel)]="selectManageLeaves.leaveType">
+      <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+
+    </mat-form-field>
+
+  </div>
+
+
+
+
+  <div fxLayout="row" fxLayoutWrap="wrap">
+    <mat-form-field>
+      <mat-select formControlName="updatedEvery" placeholder="Balance Gets Updated Every:" [(ngModel)]="selectManageLeaves.updatedEvery">
+        <mat-option class="updatedEvery" *ngFor="let updatedEvery of updatedEvery" [value]="updatedEvery">{{updatedEvery}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+  </div>
+
+
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="Credits earned every month" formControlName="gain" [(ngModel)]="selectManageLeaves.gain">
+      <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      </div>
+      
+      <div fxLayout="row" fxLayoutWrap="wrap" class="m-b-20">
+        <h5>Eligible for the following Employment Statues:</h5>
+        <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+          <div class="m-r-15">
+            <mat-checkbox formControlName="eligible" [(ngModel)]="selectManageLeaves.eligible">Regular Employee </mat-checkbox>
+            <!-- <mat-checkbox>Cantractuals  < 1 year </mat-checkbox>
+                <mat-checkbox>Contractuals > 1 year </mat-checkbox>
+                <mat-checkbox>Trainees </mat-checkbox> -->
+          </div>
+      
+        </div>
+      </div>
+
+  <!-- <div fxLayout="row" fxLayoutWrap="wrap" class="m-b-20">
+    <h5>Eligible for the following Employment Statues:</h5>
+    <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="50">
+      <div class="m-r-15">
+        <mat-radio-group formControlName="eligible" [(ngModel)]="selectManageLeaves.eligible">
+          <mat-radio-button *ngFor="let eligible of eligible" [value]="eligible">
+            {{eligible}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+  </div> -->
+
+</form>
+
+
+
+<div class="m-t-5" mat-dialog-actions fxLayoutAlign="center">
+  <!-- <button mat-raised-button *ngIf="!manageLeavesForm==false" [mat-dialog-close]>Back</button> -->
+  <button mat-raised-button *ngIf="!manageLeavesForm==false" [mat-dialog-close]>Cancel</button>
+  <button mat-raised-button (click)="deleteManageLeaves()" [mat-dialog-close]>Delete</button>
+  <button mat-raised-button (click)="editManageLeaves()" [disabled]="manageLeavesForm.valid">Edit</button>
+  <button mat-raised-button (click)="saveManageLeaves(manageLeavesForm.value)" [disabled]="!manageLeavesForm.valid" [mat-dialog-close]>Save Changes</button>
+</div>

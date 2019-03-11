@@ -1,0 +1,8 @@
+<div fxLayout="column" fxLayoutAlign="center center" style="height: 100%" *ngIf="!confirmSave">
+  <h6 class="m-0" style="margin: auto">
+    You have successfully added a new role.
+  </h6>
+  <span fxLayoutAlign="center end">
+    <button mat-button (click)="closeDialog()" [routerLink]="['/dashboards/manage-roles']">Ok</button>
+  </span>
+  </div>

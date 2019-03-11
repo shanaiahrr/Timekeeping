@@ -1,0 +1,16 @@
+C:\Training\TimeKeeping\Infra\bin\Debug\netcoreapp2.1\Infra.deps.json
+C:\Training\TimeKeeping\Infra\bin\Debug\netcoreapp2.1\Infra.runtimeconfig.json
+C:\Training\TimeKeeping\Infra\bin\Debug\netcoreapp2.1\Infra.runtimeconfig.dev.json
+C:\Training\TimeKeeping\Infra\bin\Debug\netcoreapp2.1\Infra.dll
+C:\Training\TimeKeeping\Infra\bin\Debug\netcoreapp2.1\Infra.pdb
+C:\Training\TimeKeeping\Infra\bin\Debug\netcoreapp2.1\Domain.dll
+C:\Training\TimeKeeping\Infra\bin\Debug\netcoreapp2.1\Domain.Models.dll
+C:\Training\TimeKeeping\Infra\bin\Debug\netcoreapp2.1\Domain.pdb
+C:\Training\TimeKeeping\Infra\bin\Debug\netcoreapp2.1\Domain.Models.pdb
+C:\Training\TimeKeeping\Infra\obj\Debug\netcoreapp2.1\Infra.csprojAssemblyReference.cache
+C:\Training\TimeKeeping\Infra\obj\Debug\netcoreapp2.1\Infra.csproj.CoreCompileInputs.cache
+C:\Training\TimeKeeping\Infra\obj\Debug\netcoreapp2.1\Infra.AssemblyInfoInputs.cache
+C:\Training\TimeKeeping\Infra\obj\Debug\netcoreapp2.1\Infra.AssemblyInfo.cs
+C:\Training\TimeKeeping\Infra\obj\Debug\netcoreapp2.1\Infra.csproj.CopyComplete
+C:\Training\TimeKeeping\Infra\obj\Debug\netcoreapp2.1\Infra.dll
+C:\Training\TimeKeeping\Infra\obj\Debug\netcoreapp2.1\Infra.pdb

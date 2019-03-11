@@ -1,0 +1,40 @@
+<div fxLayoutAlign="space-between">
+    <h3 class="m-0">Manage Roles</h3>
+    <h3 class="m-0">{{ today | date:'MMMM d, y | EEEE' }}</h3>
+  </div>
+  <mat-divider class="m-t-15 m-b-15"></mat-divider>
+  
+  <a mat-raised-button [routerLink]="['/dashboards/role']">Add New Role</a>
+  
+  
+ <div>
+    <mat-card>
+        <mat-card-content>
+            <div class="table-responsive">
+                <mat-table #table [dataSource]="dataSource">
+                  <ng-container matColumnDef="roleName">
+                    <mat-header-cell *matHeaderCellDef> Role Title </mat-header-cell>
+                    <mat-cell *matCellDef="let Roles"> {{Roles.roleName}} </mat-cell>
+                  </ng-container>
+                       
+                  <ng-container matColumnDef="actions">
+                      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+                      <mat-cell *matCellDef="let Roles">
+                          <a mat-raised-button [routerLink]="['/dashboards/role/',Roles.roleID,'edit-role']">Edit</a>
+                          <button mat-raised-button (click)="okDelete(Roles)">Delete</button>
+                      </mat-cell>
+                    </ng-container>
+                       
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+            <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]">
+            </mat-paginator>
+        </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <a mat-raised-button [routerLink]="['/dashboards/admin']">Back</a>
+
+ 

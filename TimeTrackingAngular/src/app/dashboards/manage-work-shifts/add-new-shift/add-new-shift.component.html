@@ -1,0 +1,92 @@
+<h1 mat-dialog-title fxLayoutAlign="center">New Shift Type</h1>
+
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <mat-form-field>
+    <input matInput placeholder="Shift Type:">
+  </mat-form-field>
+</div>
+
+<!-- <div class="m-b-15" fxLayout="row" fxLayoutWrap="wrap">
+
+  <mat-content> 
+    <md-card flex layout="column" layout-align="center center">
+      <span class="md-headline">12 Hour Time</span>
+      <md-time-picker ng-model="time.twelve" message="message"></md-time-picker>
+    </md-card>
+    <md-card flex layout="column" layout-align="center center">
+      <span class="md-headline">12 Hour Time</span>
+      <md-time-picker ng-model="time.twelve" message="message"></md-time-picker>
+    </md-card>
+  </mat-content>
+ 
+
+</div> -->
+
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card style="border-radius: 20px">
+      <mat-card-content class="m-0">
+    <h4 style="margin: auto; text-align: center">START TIME</h4>
+<button mat-icon-button (click)="openStartTime()">
+  <mat-icon class="time-icon">access_time</mat-icon>
+</button>
+    <input type="time" value="{{selectedStartTime}}" style="font-size:17px">
+</mat-card-content>
+</mat-card>
+</div>
+
+<div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card style="border-radius: 20px">
+        <mat-card-content class="m-0">
+  <h4 style="margin: auto; text-align: center;">END TIME</h4>
+  <button mat-icon-button (click)="openEndTime()">
+      <mat-icon class="time-icon">access_time</mat-icon>
+    </button>
+        <input type="time" value="{{selectedEndTime}}" style="font-size:17px">
+    </mat-card-content>
+    </mat-card>
+</div>
+</div>
+
+<!-- <ngb-timepicker [(ngModel)]="time2" [meridian]="meridian2"></ngb-timepicker> -->
+<!-- <button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
+    Meridian - {{meridian ? "ON" : "OFF"}} 
+</button> -->
+
+
+<div class="m-b-15" fxLayout="row" fxLayoutWrap="wrap">
+  <h5>Days:</h5>
+  <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+    <div class="m-r-15" fxLayoutAlign="space-between">
+      <mat-checkbox>Mon </mat-checkbox>
+      <mat-checkbox>Tue </mat-checkbox>
+      <mat-checkbox>Wed </mat-checkbox>
+      <mat-checkbox>Thu </mat-checkbox>
+      <mat-checkbox>Fri </mat-checkbox>
+      <mat-checkbox>Sat </mat-checkbox>
+      <mat-checkbox>Sun </mat-checkbox>
+    </div>
+
+  </div>
+</div>
+
+<div class="m-t-15" fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="20px">
+  <div fxFlex.gt-sm="30" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-form-field>
+      <input matInput [matDatepicker]="starting" placeholder="Starting on:">
+      <mat-datepicker-toggle matSuffix [for]="starting"></mat-datepicker-toggle>
+      <mat-datepicker #starting></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+</div>
+
+
+
+<div class="m-t-5" mat-dialog-actions fxLayoutAlign="space-between">
+
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <!-- <button mat-raised-button>Delete</button>
+    <button mat-raised-button>Edit</button> -->
+  <button mat-raised-button [mat-dialog-close]>Save Changes</button>
+</div>

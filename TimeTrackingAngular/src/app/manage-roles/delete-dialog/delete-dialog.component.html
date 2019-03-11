@@ -1,0 +1,9 @@
+<div fxLayout="column" fxLayoutAlign="center center" style="height: 100%" *ngIf="!confirmSave">
+    <h6 class="m-0" style="margin: auto">
+      <!-- Are you sure you want to add this employee? -->
+      You have successfully deleted the role.
+    </h6>
+    <span fxLayoutAlign="center end">
+      <button mat-button (click)="confirm()" (click)="closeDialog()">Ok</button>
+    </span>
+    </div>

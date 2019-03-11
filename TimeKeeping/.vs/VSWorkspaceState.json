@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Domain",
+    "\\Infra",
+    "\\WebAPI"
+  ],
+  "SelectedNode": "\\Domain\\IActivityTypeRepository.cs",
+  "PreviewInSolutionExplorer": false
+}
